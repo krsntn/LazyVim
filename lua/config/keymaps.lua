@@ -14,3 +14,4 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map({ "n" }, "<leader>bw", "<cmd>w<cr>", { desc = "Write File" })
+map({ "v" }, "p", '"_dP', { desc = "Replace selected text with default register" })
