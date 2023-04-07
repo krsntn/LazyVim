@@ -14,4 +14,5 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map({ "n" }, "<leader>bw", "<cmd>w<cr>", { desc = "Write File" })
-map({ "v" }, "p", '"_dP', { desc = "Replace selected text with default register" })
+map({ "x" }, "p", '"_dP', { desc = "Replace selected text with default register" })
+map({ "n" }, "<leader>fo", "<cmd>!open -R '%:p'<cr>", { desc = "Reveal in Finder" })
