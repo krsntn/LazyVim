@@ -3,3 +3,7 @@
 -- Add any additional options here
 
 vim.opt.conceallevel = 0
+
+-- folding
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 20
