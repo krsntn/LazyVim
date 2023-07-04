@@ -10,8 +10,9 @@ return {
       keymaps = {
         init_selection = "<s-f>",
         node_incremental = "<s-f>",
-        scope_incremental = "<nop>",
         node_decremental = "<bs>",
+        scope_incremental = "<nop>",
+        scope_decremental = "<nop>",
       },
     }
   end,

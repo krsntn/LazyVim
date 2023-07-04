@@ -7,3 +7,6 @@ vim.opt.conceallevel = 0
 -- folding
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 20
+
+-- swap file
+vim.opt.swapfile = false
