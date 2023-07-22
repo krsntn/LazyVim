@@ -8,7 +8,7 @@ return {
         -- nls.builtins.formatting.prettierd,
         nls.builtins.formatting.prettier,
         nls.builtins.formatting.stylua,
-        nls.builtins.diagnostics.flake8,
+        -- nls.builtins.diagnostics.flake8,
       },
     }
   end,

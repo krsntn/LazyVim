@@ -16,3 +16,14 @@ end
 map({ "n" }, "<leader>bw", "<cmd>w<cr>", { desc = "Write File" })
 map({ "x" }, "p", '"_dP', { desc = "Replace selected text with default register" })
 map({ "n" }, "<leader>fo", "<cmd>!open -R '%:p'<cr>", { desc = "Reveal in Finder" })
+
+-- tmux
+map("n", "<C-h>", "<cmd>lua require'tmux'.move_left()<cr>", { desc = "Go to left window" })
+map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lower window" })
+map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
+map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
+
+map("n", "<C-Up>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Decrease window height" })
+map("n", "<C-Right>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Increase window width" })
+map("n", "<C-Left>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Decrease window width" })
