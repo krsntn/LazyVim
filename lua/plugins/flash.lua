@@ -1,5 +1,6 @@
 return {
   "folke/flash.nvim",
+  event = "VeryLazy",
   opts = {
     jump = {
       pos = "end",
@@ -9,5 +10,8 @@ return {
         multi_line = false,
       },
     },
+  },
+  keys = {
+    { "s", mode = { "n", "x", "o" }, false }, -- disabled keymap s
   },
 }

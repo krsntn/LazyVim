@@ -27,3 +27,7 @@ map("n", "<C-Up>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Increase
 map("n", "<C-Down>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Decrease window height" })
 map("n", "<C-Right>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Increase window width" })
 map("n", "<C-Left>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Decrease window width" })
+
+-- windows
+map("n", "<leader>wj", "<c-w>s", { desc = "split window below", remap = true })
+map("n", "<leader>wl", "<c-w>v", { desc = "split window right", remap = true })

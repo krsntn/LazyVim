@@ -5,5 +5,6 @@ return {
   keys = {
     { "<leader>fw", Util.telescope("live_grep", { cwd = false }), desc = "Find in Files (Grep)" },
     { "<leader><space>", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
   },
 }

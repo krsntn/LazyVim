@@ -1,6 +1,5 @@
 return {
   "hrsh7th/nvim-cmp",
-  ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     local has_words_before = function()
       unpack = unpack or table.unpack
@@ -13,14 +12,10 @@ return {
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
-        -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-        -- they way you will only jump inside the snippet region
-        if luasnip.expand_or_locally_jumpable() then
-          luasnip.expand_or_jump()
-        elseif cmp.visible() then
-          cmp.confirm()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
+        if cmp.visible() then
+          cmp.confirm({ select = true })
+        elseif luasnip.locally_jumpable(1) then
+          luasnip.jump()
         elseif has_words_before() then
           cmp.complete()
         else
@@ -36,6 +31,27 @@ return {
           fallback()
         end
       end, { "i", "s" }),
+    })
+
+    opts.sources = cmp.config.sources({
+      {
+        name = "luasnip",
+        entry_filter = function()
+          local context = require("cmp.config.context")
+          return not context.in_treesitter_capture("string")
+            and not context.in_syntax_group("String")
+            and not context.in_treesitter_capture("comment")
+            and not context.in_syntax_group("Comment")
+        end,
+      },
+      {
+        name = "nvim_lsp",
+        entry_filter = function(entry, ctx)
+          return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+        end,
+      },
+      -- { name = "buffer" },
+      { name = "path" },
     })
   end,
 }
