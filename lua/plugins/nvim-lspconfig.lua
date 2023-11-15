@@ -17,7 +17,7 @@ return {
     },
     setup = {
       tsserver = function(_, opts)
-        require("lazyvim.util").on_attach(function(client, buffer)
+        require("lazyvim.util").lsp.on_attach(function(client, buffer)
           if client.name == "tsserver" then
             -- stylua: ignore
             vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
@@ -27,7 +27,7 @@ return {
         return true
       end,
       eslint = function()
-        require("lazyvim.util").on_attach(function(client)
+        require("lazyvim.util").lsp.on_attach(function(client)
           if client.name == "eslint" then
             client.server_capabilities.documentFormattingProvider = true
           elseif client.name == "tsserver" then

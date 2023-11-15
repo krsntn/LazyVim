@@ -16,6 +16,14 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = { fg = "#ff9e64" } },
+          {
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+          },
           { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
           {
             "diagnostics",
@@ -37,29 +45,22 @@ return {
           {
             function() return require("noice").api.status.command.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = Util.fg("Statement"),
+            color = Util.ui.fg("Statement"),
           },
           -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = Util.fg("Constant"),
+            color = Util.ui.fg("Constant"),
           },
           -- stylua: ignore
           {
             function() return "  " .. require("dap").status() end,
             cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = Util.fg("Debug"),
+            color = Util.ui.fg("Debug"),
           },
-          {
-            "diff",
-            symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
-            },
-          },
-          { "filetype", icon_only = false, separator = "", padding = { left = 1, right = 1 } },
+          { "filetype", icon_only = false, padding = { left = 1, right = 1 } },
+          { "encoding" },
         },
         lualine_y = {
           -- { "progress", separator = " ", padding = { left = 1, right = 0 } },
