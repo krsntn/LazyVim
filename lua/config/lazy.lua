@@ -16,6 +16,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
+    -- { import = "lazyvim.plugins.extras.coding.codeium" },
     -- { import = "lazyvim.plugins.extras.lsp.none-ls" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
@@ -30,7 +31,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight" } },
+  -- install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
