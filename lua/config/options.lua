@@ -10,3 +10,10 @@ vim.opt.foldlevel = 20
 
 -- swap file
 vim.opt.swapfile = false
+
+-- show whitespace symbol
+vim.opt.list = true
+vim.opt.listchars = {
+  space = "⋅",
+  -- eol = "↵",
+}

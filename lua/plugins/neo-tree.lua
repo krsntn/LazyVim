@@ -21,7 +21,7 @@ return {
   opts = {
     filesystem = {
       bind_to_cwd = false,
-      follow_current_file = true,
+      follow_current_file = { enabled = true },
       -- filtered_items = {
       --   visible = true,
       --   hide_dotfiles = false,
@@ -38,6 +38,14 @@ return {
         ["<space>"] = "none",
         ["l"] = "open",
         ["h"] = "close_node",
+      },
+    },
+    event_handlers = {
+      {
+        event = "file_opened",
+        handler = function(file_path)
+          require("neo-tree").close_all()
+        end,
       },
     },
   },

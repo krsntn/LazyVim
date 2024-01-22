@@ -6,7 +6,7 @@ return {
     vim.g.codeium_tab_fallback = ""
     vim.g.codeium_idle_delay = 100
 
-    vim.keymap.set("i", "<Tab>", function()
+    vim.keymap.set("i", "<C-e>", function()
       return vim.fn["codeium#Accept"]()
     end, { expr = true, silent = true })
     vim.keymap.set("i", "<C-f>", function()

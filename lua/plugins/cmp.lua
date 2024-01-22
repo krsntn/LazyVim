@@ -24,14 +24,16 @@ return {
       { name = "path" },
     })
 
+    local luasnip = require("luasnip")
+
     opts.mapping = {
-      -- ["<Tab>"] = cmp.mapping(function(fallback)
-      --   if cmp.visible() then
-      --     cmp.select_next_item()
-      --   else
-      --     fallback()
-      --   end
-      -- end, { "i", "s" }),
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if luasnip.locally_jumpable(1) then
+          luasnip.jump(1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
       ["<Enter>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.confirm({ select = true })

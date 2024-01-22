@@ -3,8 +3,18 @@ local Util = require("lazyvim.util")
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    { "<leader>fw", Util.telescope("live_grep", { cwd = false }), desc = "Find in Files (Grep)" },
-    { "<leader><space>", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    {
+      "<leader>fw",
+      Util.telescope("live_grep", { cwd = vim.fn.getcwd(), hidden = false }),
+      desc = "Find in Files (Grep)",
+    },
+    {
+      "<leader><space>",
+      Util.telescope("find_files", { cwd = vim.fn.getcwd(), hidden = true }),
+      desc = "Find Files (cwd)",
+    },
     { "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
+    { "<leader>fr", Util.telescope("oldfiles", { only_cwd = true }), desc = "Find Recent Files (cwd)" },
+    { "<leader>fR", "<cmd>Telescope oldfiles<cr>", desc = "Find Recent Files" },
   },
 }
