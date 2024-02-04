@@ -4,9 +4,12 @@
 
 vim.opt.conceallevel = 0
 
--- folding
-vim.opt.foldmethod = "indent"
-vim.opt.foldlevel = 20
+-- enable 24-bit colors
+vim.opt.termguicolors = true
+
+-- cursorline horizontal and vertical
+vim.opt.cursorline = true
+vim.opt.colorcolumn = "80"
 
 -- swap file
 vim.opt.swapfile = false
@@ -17,3 +20,15 @@ vim.opt.listchars = {
   space = "⋅",
   -- eol = "↵",
 }
+
+-- always keep 8 lines above/below cursor unless at top/bottom of file
+vim.opt.scrolloff = 8
+
+-- folding
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 20
+-- These options were recommended by nvim-ufo
+vim.opt.foldcolumn = "1"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true

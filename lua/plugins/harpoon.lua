@@ -4,12 +4,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  config = function()
-    local harpoon = require("harpoon")
-    harpoon:setup({ settings = {
-      ui_nav_wrap = true,
-    } })
-  end,
   keys = {
     {
       "<leader>ha",
@@ -23,7 +17,7 @@ return {
       "<leader>hn",
       function()
         local harpoon = require("harpoon")
-        harpoon:list():next()
+        harpoon:list():next({ ui_nav_wrap = true })
       end,
       desc = "Go to next harpoon mark",
     },
@@ -31,7 +25,7 @@ return {
       "<leader>hp",
       function()
         local harpoon = require("harpoon")
-        harpoon:list():prev()
+        harpoon:list():prev({ ui_nav_wrap = true })
       end,
       desc = "Go to previous harpoon mark",
     },

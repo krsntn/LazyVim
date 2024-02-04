@@ -7,7 +7,6 @@ return {
         init_selection = "<s-f>",
         node_incremental = "<s-f>",
         node_decremental = "<bs>",
-        scope_incremental = false,
       },
     },
   },

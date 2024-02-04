@@ -9,9 +9,22 @@ return {
       desc = "Find in Files (Grep)",
     },
     {
-      "<leader><space>",
-      Util.telescope("find_files", { cwd = vim.fn.getcwd(), hidden = true }),
+      "<leader>ff",
+      Util.telescope("find_files", {
+        cwd = vim.fn.getcwd(),
+        hidden = true,
+        file_ignore_patterns = { ".git/", "node_modules/" },
+      }),
       desc = "Find Files (cwd)",
+    },
+    {
+      "<leader><space>",
+      Util.telescope("find_files", {
+        cwd = vim.fn.getcwd(),
+        hidden = true,
+        file_ignore_patterns = { ".git/", "node_modules/" },
+        desc = "Find Files (cwd)",
+      }),
     },
     { "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
     { "<leader>fr", Util.telescope("oldfiles", { only_cwd = true }), desc = "Find Recent Files (cwd)" },
