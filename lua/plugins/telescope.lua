@@ -23,6 +23,7 @@ return {
         cwd = vim.fn.getcwd(),
         hidden = true,
         file_ignore_patterns = { ".git/", "node_modules/" },
+        case_mode = "ignore_case",
         desc = "Find Files (cwd)",
       }),
     },

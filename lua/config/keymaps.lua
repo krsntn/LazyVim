@@ -23,10 +23,10 @@ map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lo
 map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
 map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
 
--- map("n", "<C-Up>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Increase window height" })
--- map("n", "<C-Down>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Decrease window height" })
-map("n", "<C-Right>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Increase window width" })
-map("n", "<C-Left>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Decrease window width" })
+map("n", "<A-Up>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Increase window height" })
+map("n", "<A-Down>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Decrease window height" })
+map("n", "<A-Right>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Increase window width" })
+map("n", "<A-Left>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Decrease window width" })
 
 -- windows
 map("n", "<leader>wk", "<c-w>s<c-k>", { desc = "split window up", remap = true })
@@ -49,3 +49,5 @@ map("n", "q", "<nop>")
 map("n", '<leader>cs"', '?"<cr>cl{`<esc>/"<cr>cl`}<esc>', { desc = 'Change Surround "' })
 map("n", "<leader>cs'", "?'<cr>cl{`<esc>/'<cr>cl`}<esc>", { desc = "Change Surround '" })
 map("n", "<leader>cs`", '?{`<cr>2cl"<esc>/`}<cr>2cl"<esc>', { desc = "Change Surround `" })
+
+map("n", "<leader>ghq", "<cmd>wincmd p | q<cr>", { desc = "Close Diff View" })

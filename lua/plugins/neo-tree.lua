@@ -4,7 +4,7 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").get_root() })
+        require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").root.get() })
       end,
       desc = "Explorer NeoTree (root dir)",
     },
@@ -43,7 +43,13 @@ return {
     event_handlers = {
       {
         event = "file_opened",
-        handler = function(file_path)
+        handler = function()
+          require("neo-tree").close_all()
+        end,
+      },
+      {
+        event = "neo_tree_buffer_leave",
+        handler = function()
           require("neo-tree").close_all()
         end,
       },

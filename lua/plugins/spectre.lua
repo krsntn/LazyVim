@@ -3,7 +3,7 @@ return {
   keys = {
     {
       "<leader>sr",
-      disable = true,
+      false,
     },
     {
       "<leader>R",
