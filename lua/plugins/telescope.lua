@@ -1,22 +1,22 @@
 local Util = require("lazyvim.util")
-local trouble = require("trouble.providers.telescope")
+local trouble = require("trouble.sources.telescope")
 
 return {
   "nvim-telescope/telescope.nvim",
-  config = function()
-    require("telescope").setup({
-      defaults = {
-        mappings = {
-          i = {
-            ["<C-t>"] = trouble.open_with_trouble,
-          },
-          n = {
-            ["<C-t>"] = trouble.open_with_trouble,
-          },
-        },
-      },
-    })
-  end,
+  -- config = function()
+  --   require("telescope").setup({
+  --     defaults = {
+  --       mappings = {
+  --         i = {
+  --           ["<C-t>"] = trouble.open(),
+  --         },
+  --         n = {
+  --           ["<C-t>"] = trouble.open(),
+  --         },
+  --       },
+  --     },
+  --   })
+  -- end,
   keys = {
     {
       "<leader>fw",

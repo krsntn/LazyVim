@@ -1,41 +1,39 @@
 return {}
 -- return {
 --   "neovim/nvim-lspconfig",
---   dependencies = { "jose-elias-alvarez/typescript.nvim" },
 --   opts = {
---     format = {
---       timeout_ms = 2000,
---     },
+--     -- make sure mason installs the server
 --     servers = {
---       eslint = {},
 --       tsserver = {
+--         enabled = false,
+--       },
+--       vtsls = {
 --         settings = {
---           completions = {
---             completeFunctionCalls = true,
+--           complete_function_calls = true,
+--           vtsls = {
+--             enableMoveToFileCodeAction = true,
+--             experimental = {
+--               completion = {
+--                 enableServerSideFuzzyMatch = true,
+--               },
+--             },
+--           },
+--           typescript = {
+--             updateImportsOnFileMove = { enabled = "always" },
+--             suggest = {
+--               completeFunctionCalls = true,
+--             },
+--             inlayHints = {
+--               enumMemberValues = { enabled = true },
+--               functionLikeReturnTypes = { enabled = true },
+--               parameterNames = { enabled = "literals" },
+--               parameterTypes = { enabled = true },
+--               propertyDeclarationTypes = { enabled = true },
+--               variableTypes = { enabled = false },
+--             },
 --           },
 --         },
 --       },
---     },
---     setup = {
---       tsserver = function(_, opts)
---         require("lazyvim.util").lsp.on_attach(function(client, buffer)
---           if client.name == "tsserver" then
---             -- stylua: ignore
---             vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
---           end
---         end)
---         require("typescript").setup({ server = opts })
---         return true
---       end,
---       eslint = function()
---         require("lazyvim.util").lsp.on_attach(function(client)
---           if client.name == "eslint" then
---             client.server_capabilities.documentFormattingProvider = true
---           elseif client.name == "tsserver" then
---             client.server_capabilities.documentFormattingProvider = false
---           end
---         end)
---       end,
 --     },
 --   },
 -- }
