@@ -60,19 +60,16 @@ return {
             color = Util.ui.fg("Debug"),
           },
           { "filetype", icon_only = false, padding = { left = 1, right = 1 } },
-          { "encoding" },
         },
         lualine_y = {
+          { "encoding" },
+        },
+        lualine_z = {
           -- { "progress", separator = " ", padding = { left = 1, right = 0 } },
           { "location", padding = { left = 0, right = 1 } },
         },
-        lualine_z = {
-          function()
-            return "  " .. os.date("%R")
-          end,
-        },
       },
-      extensions = { "neo-tree", "lazy" },
+      -- extensions = { "neo-tree", "lazy" },
     }
   end,
 }
