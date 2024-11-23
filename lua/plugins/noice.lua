@@ -1,9 +1,1 @@
-return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    presets = {
-      command_palette = false,
-    },
-  },
-}
+../../../../Projects/dotfiles/.config/nvim/lua/plugins/noice.lua

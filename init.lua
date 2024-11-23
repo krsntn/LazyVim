@@ -1,2 +1,1 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
+../../Projects/dotfiles/.config/nvim/init.lua
