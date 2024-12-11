@@ -1,1 +1,26 @@
-../../../../Projects/dotfiles/.config/nvim/lua/plugins/colorscheme.lua
+-- return {
+--   -- add gruvbox
+--   { "ellisonleao/gruvbox.nvim" },
+--
+--   -- Configure LazyVim to load gruvbox
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "gruvbox",
+--     },
+--   },
+-- }
+--
+return {
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = { style = "moon" },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
+}
