@@ -20,21 +20,30 @@ return {
               end
 
               local pieces = vim.split(prompt, "  ")
-              local args = { "rg" }
+              local args = {
+                "rg",
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--smart-case",
+                "--glob-case-insensitive",
+              }
 
               if pieces[1] then
                 table.insert(args, "-e")
                 table.insert(args, pieces[1])
               end
+
               if pieces[2] then
                 table.insert(args, "-g")
-                table.insert(args, "*" .. pieces[2] .. "*")
+                table.insert(args, "**/" .. pieces[2] .. "**")
               end
 
               return vim
                 .iter({
                   args,
-                  { "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
                 })
                 :flatten()
                 :totable()
