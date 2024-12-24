@@ -32,3 +32,6 @@ vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
+
+-- disable all animations
+vim.g.snacks_animate = false
