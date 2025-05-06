@@ -4,14 +4,14 @@ return {
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = "<s-f>",
-        node_incremental = "<s-f>",
-        node_decremental = "<bs>",
+        init_selection = "+",
+        node_incremental = "+",
+        node_decremental = "-",
       },
     },
   },
   keys = {
-    { "<s-f>", desc = "Increment selection" },
-    { "<bs>", desc = "Decrement selection", mode = "x" },
+    { "+", desc = "Increment selection" },
+    { "-", desc = "Decrement selection", mode = "x" },
   },
 }
