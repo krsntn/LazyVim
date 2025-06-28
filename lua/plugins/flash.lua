@@ -14,14 +14,4 @@ return {
       },
     },
   },
-  keys = {
-    -- { "s", mode = { "n", "x", "o" }, false }, -- disabled keymap s
-    {
-      "?",
-      mode = { "n", "x", "o" },
-      function()
-        require("flash").jump()
-      end,
-    },
-  },
 }

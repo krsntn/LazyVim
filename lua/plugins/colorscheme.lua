@@ -1,13 +1,32 @@
 return {
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = true,
+  --   opts = { style = "moon" },
+  -- },
   {
-    "folke/tokyonight.nvim",
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
     lazy = true,
-    opts = { style = "moon" },
+    opts = {
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+            },
+          },
+        },
+      },
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "kanagawa-wave",
+      -- Other themes:
+      --   kanagawa-dragon
+      --   kanagawa-lotus
     },
   },
 }
